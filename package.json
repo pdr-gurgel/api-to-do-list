@@ -1,0 +1,16 @@
+{
+  "name": "to-do-list",
+  "version": "2.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Pedro Gurgel",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "fastify": "^5.1.0",
+    "mysql2": "^3.11.5"
+  }
+}
