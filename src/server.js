@@ -1,3 +1,4 @@
+require('dotenv').config({ path: '../.env' });
 const fastify = require('fastify')({ logger: true });
 const database = require('../database/database.js');
 const tasksRoutes = require('./tasks.js');
@@ -12,8 +13,9 @@ fastify.get('/', async (request, reply) => {
 // Inicializando o servidor
 const start = async () => {
   try {
-    await fastify.listen({ port: 3000, host: '0.0.0.0' });
-    console.log('Servidor rodando em: http://localhost:3000');
+    const PORT = process.env.PORT || 3000;
+    await fastify.listen({ port: PORT, host: '0.0.0.0' });
+    console.log(`Servidor rodando em: http://localhost:${PORT}`);
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
